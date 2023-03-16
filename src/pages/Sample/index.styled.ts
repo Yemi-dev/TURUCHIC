@@ -3,47 +3,57 @@ import styled from 'styled-components';
 export const HelloContainer = styled.div`
   height: 100vh;
   width: 100vw;
-  padding: 5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background: url('/uploads/Turuchic.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  position: relative;
   color: ${({ theme }) => theme.colors.white} !important;
   font-weight: bold;
   font-family: 'Poppins', sans-serif;
-  @media (max-width: 990px){
-    padding: 3rem;
-    background-position: left;
+  overflow:hidden;
+  .image{
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    object-position: center;
   }
-  @media (max-width: 480px){
-    padding: 3rem 1rem;
+  @media (max-width: 1200px){
+   .image{
+    object-position: left;
+   }
   }
 `;
 
 
 export const Logo = styled.div`
-  margin-left: auto;
+position: absolute;
+top: 3rem;
+left: 5rem;
   width: 100%;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 64px;
-  @media (max-width: 990px){
+  @media (max-width: 1200px){
     font-size: 48px;
   }
+  @media (max-width: 768px){
+    font-size: 40px;
+    left: 3rem;
+  }
   @media (max-width: 480px){
+    left: 1rem;
     font-size: 32px;
   }
 `;
 
 export const SubscribeContainer = styled.div`
 text-align:center;
+position: absolute;
+top:35%;
+left: 0; 
+right: 0; 
+margin-left: auto; 
+margin-right: auto; 
+width: 700px;
 .message{
   margin-top: 1rem;
-
 }
   h1{
     font-weight: 400;
@@ -53,7 +63,7 @@ text-align:center;
     font-weight: 400;
     font-size: 27.0254px;
   }
-  @media (max-width: 990px){
+  @media (max-width: 1200px){
    h1{
     font-size: 64px;
    }
@@ -62,6 +72,7 @@ text-align:center;
    }
   }
   @media (max-width: 768px){
+    width: 500px;
    h1{
     font-size: 48px;
    }
@@ -70,6 +81,7 @@ text-align:center;
    }
   }
   @media (max-width: 480px){
+    width: 350px;
     h1{
       font-size: 40px;
      }
@@ -77,19 +89,35 @@ text-align:center;
       font-size: 16px;
      }
   }
+  @media (max-width: 360px){
+    width: 280px;
+    h1{
+      font-size: 32px;
+     }
+     p{
+      font-size: 14px;
+     }
+  }
 `;
 
 export const SocialsContainer = styled.div`
   width: 100%;
   text-align:right;
+  position: absolute;
+  bottom:3rem;
+  right: 5rem;
   p{
     font-weight: 400;
     font-size: 20px;
   }
   @media (max-width: 768px){
+    right: 2rem;
     p{
      font-size: 16px;
     }
+   }
+  @media (max-width: 480px){
+    right: 1rem;
    }
 `;
 
@@ -98,13 +126,11 @@ export const InputGroup = styled.form`
   align-items:center;
   justify-content: center;
   margin-top: 1rem;
- 
   input,button{
     padding:0.8rem 2rem;
     border-radius: 10px;
   }
   input{
-    width: 60%;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
     background: rgba(180, 179, 177, 0.5);

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Icon } from '@iconify/react';
 import { HelloContainer, InputGroup, Logo, SocialIcons, SocialsContainer, SubscribeContainer } from './index.styled';
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const Sample = (): JSX.Element => {
   const [email, setEmail] = useState('')
@@ -16,6 +18,7 @@ const Sample = (): JSX.Element => {
   }
   return (
     <HelloContainer>
+      <LazyLoadImage src="/uploads/Turuchic.png" alt="img" width="100%" height="100%" className='image' placeholderSrc='/uploads/Turuchic.com-min.png' effect='blur' />
       <Logo>Turuchic.com</Logo>
       <SubscribeContainer>
         <h1>Launching Soon</h1>
